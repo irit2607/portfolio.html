@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image gallery</title>
+  <style type="text/css">
+    body {
+  margin: 0;
+  background-image: url("https://previews.123rf.com/images/flas100/flas1001802/flas100180200103/96476174-abstract-light-blue-watercolor-background-painted-on-watercolor-paper.jpg");
+  background-size: cover;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+}
+.logo{
+    max-width: 200px;
+    text-decoration: none;
+    font-size: 110%;
+    color: #000000;
+    font-size: 500;
+    font-family: 'Balsamiq Sans', cursive;
+
+}
+.nav{
+    position: fixed;
+    background: #DDA0DD;
+    color: #663399;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    transform: translateX(100%);
+    transition: transform 250ms cubic-bezier(.5, 0, .5, 1);
+}
+.nav__list {
+    list-style: none;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+     margin: 0;
+    padding: 0;
+    
+    
+}
+.nav__link {
+    color: inherit;
+    font-weight: 600;
+    font-size: 190%;
+    text-decoration: none;
+}
+.nav__link:hover {
+    color: #FFFFFF;
+}
+.nav-toggle {
+    padding: .5em;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    z-index: 1000;
+
+}
+
+.nav-open .nav {
+    transform: translateX(0);
+   
+}
+.nav-open .nav-toggel{
+    position: fixed;
+}
+.nav-open .hamburger {
+    transform: rotate(.625turn);
+}
+.nav-open .hamburger::before {
+    transform: rotate(90deg) translateX(-6px);
+}
+
+.nav-open .hamburger::after {
+    opacity: 0;
+}
+
+.hamburger{
+    
+    display: block;
+    position: relative;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after{
+    background:#8B0000;
+    width: 2.5em;
+    height: 3px;
+    border-radius: 1em;
+    transition: transform 250ms ease-in-out;
+
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+   
+}
+.hamburger::before { top: 6px; }
+.hamburger::after { bottom: 6px; }
+
+.t{
+  font-size: 33px;
+  text-align: center;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 200px);
+  justify-content: center;
+  align-content: center;
+  grid-gap: 10px;
+  height: 80vh;
+
+}
+
+.grid img {
+  width: 200px;
+  height: 200px;
+  cursor: pointer;
+}
+
+#lightbox {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .8);
+  display: none;
+}
+
+#lightbox.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 80%;
+  padding: 4px;
+  background-color: black;
+  border: 2px solid white;
+}
+.social-icons a{
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e6e3e3;
+  margin: 7px 10px;
+  border-radius: 50%;
+
+}
+.social-icons{
+  display: flex;
+
+}
+.social-icons i{
+  color: #000000;
+}
+.social-icons a:hover{
+  background-color: #000000;
+  box-shadow: 2px 2px 12px rgba(0,0,0,0.2);
+  transition: all ease 5s;
+}
+.social-icons a:hover i{
+  color: #ffffff;
+  transition: all ease 0.1s;
+}
+
+.a-social-b a:hover{
+  background-color: #000000;
+  box-shadow: 2px 2px 12px rgba(0,0,0,0.2);
+  transition: all ease 5s;
+}
+
+.a-social-b a:hover i{
+  color: #ffffff;
+  transition: all ease 0.1s;
+}
+.a-social-b{
+  position: fixed;
+  top:50%;
+  right: 0px;
+  transform: translateY(-50%);
+}
+.a-social-b a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:50px;
+  height: 50px;
+  padding: 0px;
+  margin: 0px;
+  line-height: 0px;
+  background-color: #ffffff;
+  border: 1px solid #cbcbcb;
+  box-shadow: 2px 2px 12px rgba(0,0,0,0.2);
+}
+.a-social-b i{
+  color: #2b2b2b;
+  font-size: 20px;
+
+}
+
+@media(max-width: 700px){
+  .grid img {
+  width: 200px;
+  height: 200px;
+  cursor: pointer;
+  
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 200px);
+  justify-content: center;
+  align-content: center;
+  grid-gap: 10px;
+  height: 100vh;
+  
+}
+}
+
+ 
+
+
+
+
+
+  </style>
+  
+</head>
+<body>
+  <header>
+            <div class="logo">
+                <a href="" class="logo"><i></i></a>
+            </div>
+            <button class="nav-toggle" aria-label="toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="portfolio.html" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="edu.html" class="nav__link">Educational</a></li>
+                    <li class="nav__item"><a href="exp.html" class="nav__link">Experience</a></li>
+                   
+                    <li class="nav__item"><a href="last.html" class="nav__link">Photo</a></li>
+                </ul>
+            </nav>
+        </header>
+  <div class="t">
+    <p>Photo Gallery</p>
+  </div>
+  <div class="grid">
+ <img src="https://user-images.githubusercontent.com/67689773/86312572-a88d9000-bc40-11ea-8af9-084266900a85.jpg">
+  <img src="https://user-images.githubusercontent.com/67689773/86312117-9b23d600-bc3f-11ea-93c9-6b0ff26bea19.png">
+  <img src="https://user-images.githubusercontent.com/67689773/86312108-93fcc800-bc3f-11ea-8535-24742ef97509.png">
+  <img src="https://user-images.githubusercontent.com/67689773/86312091-85aeac00-bc3f-11ea-912f-f9d220073822.png">
+  <img src="https://user-images.githubusercontent.com/67689773/86312066-74659f80-bc3f-11ea-86c4-46f064f426a3.png">
+  <img src="https://user-images.githubusercontent.com/67689773/86311839-e7bae180-bc3e-11ea-82fa-a9db34ff2623.png">
+
+  
+
+  
+</div>
+
+<div class="a-social-b">
+  <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+  <a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+  <a href="https://www.instagram.com/accounts/login/?hl=en"><i class="fab fa-instagram"></i></a>
+  <a href="https://www.youtube.com/watch?v=D86jDLamFuA"><i class="fab fa-youtube"></i></a>
+  
+  </div>
+      <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script type="text/javascript">
+        const navToggle = document.querySelector('.nav-toggle');
+const navLinks = document.querySelectorAll('.nav__link')
+
+navToggle.addEventListener('click', () => {
+    document.body.classList.toggle('nav-open');
+});
+
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        document.body.classList.remove('nav-open');
+    })
+})
+
+    </script>
+
+    <script type="text/javascript">
+      const lightbox = document.createElement('div')
+lightbox.id = 'lightbox'
+document.body.appendChild(lightbox)
+
+const images = document.querySelectorAll('img')
+images.forEach(image => {
+  image.addEventListener('click', e => {
+    lightbox.classList.add('active')
+    const img = document.createElement('img')
+    img.src = image.src
+    while (lightbox.firstChild) {
+      lightbox.removeChild(lightbox.firstChild)
+    }
+    lightbox.appendChild(img)
+  })
+})
+
+lightbox.addEventListener('click', e => {
+  if (e.target !== e.currentTarget) return
+  lightbox.classList.remove('active')
+})
+    </script>
+
+</body>
+</html>

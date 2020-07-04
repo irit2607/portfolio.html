@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Portfolio</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" /> 
+  <style type="text/css">
+    body{
+  margin: 0;
+
+  }
+  
+*{
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  text-decoration: none;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+}
+.logo{
+    max-width: 200px;
+    text-decoration: none;
+    font-size: 110%;
+    color: #000000;
+    font-size: 500;
+    font-family: 'Balsamiq Sans', cursive;
+
+}
+.nav{
+    position: fixed;
+    background: #DDA0DD;
+    color: #663399;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    transform: translateX(100%);
+    transition: transform 250ms cubic-bezier(.5, 0, .5, 1);
+}
+.nav__list {
+    list-style: none;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+     margin: 0;
+    padding: 0;
+    
+    
+}
+.nav__link {
+    color: inherit;
+    font-weight: 600;
+    font-size: 190%;
+    text-decoration: none;
+}
+.nav__link:hover {
+    color: #FFFFFF;
+}
+.nav-toggle {
+    padding: .5em;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    z-index: 1000;
+
+}
+
+.nav-open .nav {
+    transform: translateX(0);
+   
+}
+.nav-open .nav-toggel{
+    position: fixed;
+}
+.nav-open .hamburger {
+    transform: rotate(.625turn);
+}
+.nav-open .hamburger::before {
+    transform: rotate(90deg) translateX(-6px);
+}
+
+.nav-open .hamburger::after {
+    opacity: 0;
+}
+
+.hamburger{
+    
+    display: block;
+    position: relative;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after{
+    background:#8B0000;
+    width: 2.5em;
+    height: 3px;
+    border-radius: 1em;
+    transition: transform 250ms ease-in-out;
+
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+   
+}
+.hamburger::before { top: 6px; }
+.hamburger::after { bottom: 6px; }
+
+
+/*.......*/
+.home{
+    min-height: 80vh;
+    background-image: url("https://image.freepik.com/free-vector/molecular-structure-background_1262-7390.jpg");
+    background-size: cover;
+    padding: 125px;
+    
+}
+.home .full-screen{
+    
+    min-height: 50vh;
+}
+.home .home-content{
+    flex: 0 0 100%;
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.home .home-content .block{
+    flex: 0 0 95%;
+    max-width: 75%;
+    padding-left: 35px;
+    border-left: 5px solid #000000;
+    margin-top: 50px;
+    margin-right: 40px;
+    }
+
+.home .home-content .block h1{
+    color: #000000;
+    font-size: 370%;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Slab', serif;
+
+    
+}
+
+.home .home-content .block h3{
+    color: #000000;
+    font-size: 28px;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+    
+    
+}
+.home .home-content .block .button{
+    padding-top: 20px;
+}
+.home .home-content .block .button a{
+    border-radius: 4px;
+    color: #000000;
+    border:1px solid #000000;
+    padding: 12px 25px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+   
+    font-weight: 600;
+    transition: all .5s ease;
+    background-color: transparent;
+}
+.home .home-content .block .button a:hover{
+    background-color: #ffffff;
+    color: #000000;
+
+}
+footer{
+  height: 125px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: #f0f8ff;
+}
+footer p{
+  font-family:'Roboto Condensed', sans-serif;
+}
+footer p:nth-child(1){
+  font-size: 25px;
+  color: #191919;
+  font-weight: bold;
+  line-height: 10px;
+}
+footer p:nth-child(2){
+  font-size: 20px;
+  color: #191919;
+  line-height: 40px;
+
+}
+footer a { 
+    color: inherit;
+    text-decoration: none;
+}
+
+.footer__link {
+    font-weight: var(--fw-bold);
+}
+
+.footer__link:hover{
+    opacity: .7;
+}
+
+.footer__link:hover {
+    text-decoration: underline;
+}
+.social-icons a{
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e6e3e3;
+  margin: 7px 10px;
+  border-radius: 50%;
+
+}
+.social-icons{
+  display: flex;
+
+}
+.social-icons i{
+  color: #000000;
+}
+.social-icons a:hover{
+  background-color: #000000;
+  box-shadow: 2px 2px 12px rgba(0,0,0,0.2);
+  transition: all ease 5s;
+}
+.social-icons a:hover i{
+  color: #ffffff;
+  transition: all ease 0.1s;
+}
+
+.a-social-b a:hover{
+  background-color: #000000;
+  box-shadow: 2px 2px 12px rgba(0,0,0,0.2);
+  transition: all ease 5s;
+}
+
+.a-social-b a:hover i{
+  color: #ffffff;
+  transition: all ease 0.1s;
+}
+.a-social-b{
+  position: fixed;
+  top:50%;
+  right: 0px;
+  transform: translateY(-50%);
+}
+.a-social-b a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:50px;
+  height: 50px;
+  padding: 0px;
+  margin: 0px;
+  line-height: 0px;
+  background-color: #ffffff;
+  border: 1px solid #cbcbcb;
+  box-shadow: 2px 2px 12px rgba(0,0,0,0.2);
+}
+.a-social-b i{
+  color: #2b2b2b;
+  font-size: 20px;
+
+}
+
+
+
+
+@media (max-width: 1000px){
+
+  label.logo{
+    font-size: 30px;
+    padding-left: 50px;
+  }
+ 
+  .home .home-content .block h1{
+    font-size: 300%;
+}
+
+
+
+  
+@media (max-width: 950px){
+  
+  .home{
+    padding: 70px;
+  }
+  .home .home-content .block h1{
+    font-size: 265%;
+  }
+  label.logo{
+    font-size: 25px;
+  }
+}
+  @media (max-width: 500px){
+    label.logo{
+          font-size: 20px;
+    
+    padding-right: 4%;  
+       }
+       .home .home-content .block{
+        padding-right: 5%;
+       }
+      
+footer p:nth-child(1){
+  font-size: 20px;
+}
+}
+/*.........*/
+
+  </style>
+
+  
+        
+</head>
+<body>
+       <header>
+            <div class="logo">
+                <a href="" class="logo"><i>By Irit Kushwaha</i></a>
+            </div>
+            <button class="nav-toggle" aria-label="toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="edu.html" class="nav__link">Educational</a></li>
+                    <li class="nav__item"><a href="exp.html" class="nav__link">Experience</a></li>
+                   
+                    <li class="nav__item"><a href="last.html" class="nav__link">Photo</a></li>
+                </ul>
+            </nav>
+        </header>
+      <section class="home">
+        <div class="container">
+            <div class="row full-screen">
+                <div class="home-content">
+                    <div class="block">
+                    
+                    <h1>Dr. Debdatta Ratna</h1>
+                    <h3>Scientist “F” Head, Directorate of Polymer Science and Technology</h3>
+                    <div class="button">
+                        <a href="https://www.drdo.gov.in/naval-research-board/nmrl-ambernath">DRDO, NMRL</a>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer >
+   <p>Email id:<a href="#" class="footer__link">ratnad29@hotmail.com</a></p>
+   <p>Phone no.: 9766619055</p>
+  <div class="social-icons">
+  <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+  <a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+  <a href="mailto:iritkushwaha2607@gmail.com"><i class="fas fa-envelope-square"></i></a>
+  <a href="https://www.youtube.com/watch?v=D86jDLamFuA"><i class="fab fa-youtube"></i></a>
+  
+  </div>
+</footer>
+<div class="a-social-b">
+  <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+  <a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+  <a href="https://www.instagram.com/accounts/login/?hl=en"><i class="fab fa-instagram"></i></a>
+  <a href="https://www.youtube.com/watch?v=D86jDLamFuA"><i class="fab fa-youtube"></i></a>
+  
+  </div>
+  
+
+
+   
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+     <script type="text/javascript">
+        const navToggle = document.querySelector('.nav-toggle');
+const navLinks = document.querySelectorAll('.nav__link')
+
+navToggle.addEventListener('click', () => {
+    document.body.classList.toggle('nav-open');
+});
+
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        document.body.classList.remove('nav-open');
+    })
+})
+
+    </script>
+</body>
+</html>

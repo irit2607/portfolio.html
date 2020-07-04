@@ -1,0 +1,307 @@
+
+
+body{
+	margin: 0;
+
+	}
+	
+*{
+	box-sizing: border-box;
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	text-decoration: none;
+}
+nav{
+	background: #0082e6;
+	height: 0px;
+	width: 100%;
+}
+label.logo{
+	color: #000000;
+	font-size: 30px;
+	line-height: 80px;
+	padding: 0 100px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+nav ul{
+	float: right;
+	margin-right: 20px;
+
+}
+nav ul li{
+	display: inline-block;
+	line-height: 80px;
+	margin: 0 5px;
+}
+nav ul li a{
+	color: #000000;
+	font-size: 19px;
+	font-weight: bold;
+	text-transform: uppercase;
+	padding: 7px 13px;
+	border-radius: 3px;
+}
+a.active, a:hover{
+	background: #1b9bff;
+	transition: .5s;
+
+}
+.checkbtn{
+	font-size: 30px;
+	color: #000000;
+	float: right;
+	line-height: 80px;
+	margin-right: 40px;
+	cursor: pointer;
+	display: none;
+}
+#check{
+	display: none;
+}
+
+/*.......*/
+.home{
+    min-height: 80vh;
+    background-image: url("https://image.freepik.com/free-vector/molecular-structure-background_1262-7390.jpg");
+    background-size: cover;
+    padding: 125px;
+    
+}
+.home .full-screen{
+    
+    min-height: 50vh;
+}
+.home .home-content{
+    flex: 0 0 100%;
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.home .home-content .block{
+    flex: 0 0 75%;
+    max-width: 75%;
+    padding-left: 35px;
+    border-left: 5px solid #000000;
+    margin-top: 50px;
+}
+.home .home-content .block h6{
+    color: #000000;
+    font-size: 28px;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+}
+.home .home-content .block h1{
+    color: #000000;
+    font-size: 370%;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.home .home-content .block h3{
+    color: #000000;
+    font-size: 28px;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+    
+}
+.home .home-content .block .button{
+    padding-top: 20px;
+}
+.home .home-content .block .button a{
+    border-radius: 4px;
+    color: #000000;
+    border:1px solid #000000;
+    padding: 12px 25px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+   
+    font-weight: 600;
+    transition: all .5s ease;
+    background-color: transparent;
+}
+.home .home-content .block .button a:hover{
+    background-color: #ffffff;
+    color: #000000;
+
+}
+footer{
+	height: 125px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	background-color: #f0f8ff;
+}
+footer p{
+	font-family:'Roboto Condensed', sans-serif;
+}
+footer p:nth-child(1){
+	font-size: 25px;
+	color: #191919;
+	font-weight: bold;
+	line-height: 10px;
+}
+footer p:nth-child(2){
+	font-size: 20px;
+	color: #191919;
+	line-height: 40px;
+
+}
+footer a { 
+    color: inherit;
+    text-decoration: none;
+}
+
+.footer__link {
+    font-weight: var(--fw-bold);
+}
+
+.footer__link:hover{
+    opacity: .7;
+}
+
+.footer__link:hover {
+    text-decoration: underline;
+}
+.social-icons a{
+	width: 40px;
+	height: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #e6e3e3;
+	margin: 7px 10px;
+	border-radius: 50%;
+
+}
+.social-icons{
+	display: flex;
+
+}
+.social-icons i{
+	color: #000000;
+}
+.social-icons a:hover{
+	background-color: #000000;
+	box-shadow: 2px 2px 12px rgba(0,0,0,0.2);
+	transition: all ease 5s;
+}
+.social-icons a:hover i{
+	color: #ffffff;
+	transition: all ease 0.1s;
+}
+
+.a-social-b a:hover{
+	background-color: #000000;
+	box-shadow: 2px 2px 12px rgba(0,0,0,0.2);
+	transition: all ease 5s;
+}
+
+.a-social-b a:hover i{
+	color: #ffffff;
+	transition: all ease 0.1s;
+}
+.a-social-b{
+	position: fixed;
+	top:50%;
+	right: 0px;
+	transform: translateY(-50%);
+}
+.a-social-b a{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width:50px;
+	height: 50px;
+	padding: 0px;
+	margin: 0px;
+	line-height: 0px;
+	background-color: #ffffff;
+	border: 1px solid #cbcbcb;
+	box-shadow: 2px 2px 12px rgba(0,0,0,0.2);
+}
+.a-social-b i{
+	color: #2b2b2b;
+	font-size: 20px;
+
+}
+
+
+
+
+@media (max-width: 1000px){
+
+	label.logo{
+		font-size: 30px;
+		padding-left: 50px;
+	}
+	nav ul li a{
+		font-size: 16px;
+
+	}
+	.home .home-content .block h1{
+		font-size: 300%;
+}
+
+
+
+	
+@media (max-width: 950px){
+	.checkbtn{
+		display: block;
+	}
+	ul{
+		position: fixed;
+		width: 100%;
+		height: 100vh;
+		background: #7FFFDA;
+		top: 80px;
+		left: -100%;
+		text-align: center;
+		transition: all .5s;
+	}
+	nav ul li{
+		display: block;
+		margin: 50px 0;
+		line-height: 30px;
+	}
+	nav ul li a{
+		font-size: 20px;
+
+	}
+	a:hover, a.active{
+		background: none;
+		color: #4B0082;
+	}
+	#check:checked~ul{
+		left: 0;
+	}
+	.home{
+		padding: 70px;
+	}
+	.home .home-content .block h1{
+		font-size: 265%;
+	}
+	label.logo{
+		font-size: 25px;
+	}
+}
+	@media (max-width: 500px){
+		label.logo{
+	        font-size: 20px;
+		line hieght: 10px;	
+       }
+      
+footer p:nth-child(1){
+	font-size: 20px;
+
+/*.........*/
